@@ -4,4 +4,4 @@ Lightning talk given at Rails.MN meetup.
 
 ** To produce slides
 
-In emacs, `C-c C-e l P` creates a pdf of the slides with '~pdflatex~'
+In emacs, `C-c C-e l P` creates a pdf of the slides with ~pdflatex~.
