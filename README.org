@@ -1,0 +1,18 @@
+#+TITLE: README
+#+DATE: <2015-05-30 Sat>
+#+AUTHOR: Tamara Temple
+#+EMAIL: tamouse@gmail.com
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t c:nil creator:comment d:(not "LOGBOOK") date:t
+#+OPTIONS: e:t email:nil f:t inline:t num:t p:nil pri:nil stat:t
+#+OPTIONS: tags:t tasks:t tex:t timestamp:t toc:t todo:t |:t
+#+CREATOR: Emacs 24.4.1 (Org mode 8.2.10)
+#+DESCRIPTION: README file for beginning-git-tutorial
+#+EXCLUDE_TAGS: noexport
+#+KEYWORDS: git beginner tutorial howto lightning
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+
+* A beginner's guide to git
+
+Lightning talk given at Rails.MN meetup.

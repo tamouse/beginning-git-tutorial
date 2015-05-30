@@ -1,0 +1,181 @@
+#+TITLE: Beginning Git Tutorial
+#+DATE: <2015-05-30 Sat>
+#+AUTHOR: Tamara Temple
+#+EMAIL: tamouse@gmail.com
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t c:nil creator:comment d:(not "LOGBOOK") date:t
+#+OPTIONS: e:t email:nil f:t inline:t num:t p:nil pri:nil stat:t
+#+OPTIONS: tags:t tasks:t tex:t timestamp:t toc:t todo:t |:t
+#+CREATOR: Emacs 24.4.1 (Org mode 8.2.10)
+#+DESCRIPTION: a beginner's quick intro to using Git
+#+EXCLUDE_TAGS: noexport
+#+KEYWORDS: git,rails.mn,lightning-talk
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+#+OPTIONS: H:2
+#+BEAMER_COLOR_THEME:
+#+BEAMER_FONT_THEME:
+#+BEAMER_HEADER:
+#+BEAMER_INNER_THEME:
+#+BEAMER_OUTER_THEME:
+#+BEAMER_THEME: Hannover
+#+LATEX_CLASS: beamer
+#+LATEX_CLASS_OPTIONS: [bigger]
+#+STARTUP: beamer
+
+* Introduction
+** Why use git?
+
+Version control is like wearing seatbelts.
+
+- hopefully you'll never need it
+- you most likely will
+
+** What to include
+
+- your source (text) files
+- small non-text files
+
+** What to exclude
+
+- credentials and other confidential information
+- non-source files (compiled or created as part of process)
+- large non-text files (mp3s, images, videos, etc)
+
+** Configuring Git
+
+#+begin_src sh
+  git config --global user.name "Your Name"
+  git config --global user.email "you@example.com"
+  git config --global alias.co checkout
+  git config --global alias.ci commit
+#+end_src
+
+** Starting Up
+
+Initialize your local working repository:
+
+#+begin_src sh
+  mkdir my_project
+  cd my_project
+  git init .
+#+end_src
+
+Creates '~.git~' directory.
+
+** Basic git cycle
+
+The basic git workflow is pretty simple:
+
+- edit & test
+- add changes to index
+- commit changes to repo
+
+** Ignoring Files
+
+You will create files and directories during development and test that
+you don't want to include in your repository.
+
+*** '~.gitignore~'
+
+#+begin_src sh
+  # Ignore files/directories like these:
+  logs/
+  tmp/
+  config/database.yml
+  config/secrets.yml
+  ,*.zip
+#+end_src
+
+*** global ignore set in config                                      :B_note:
+    :PROPERTIES:
+    :BEAMER_env: note
+    :END:
+
+    You can add ignore formats to the global ignore configuration as
+    well. This is useful when you have common patters to ignore, such
+    as editor backups, compiled extensions, etc.
+
+    Set the global ignore file:
+
+#+begin_src sh
+  git config --global core.excludefiles=$HOME/.gitglobalignore
+#+end_src
+
+    Fill the file with patterns like:
+
+#+begin_src sh
+  ,*~
+  ,*.zip
+  ,*.tar.gz
+  ,*.tar
+  ,*.tgz
+  ,*.bak
+#+end_src
+
+
+** Branching and Merging
+
+Tamara's Rule of Thumb:
+
+*** "Branch early and often"
+
+- Compartmentalize and focus your work.
+- Many save points if you need to go back.
+
+* Remote Git
+** The Depot
+
+- A common place for a project to share a global repository.
+- The source of project "truth".
+- A remote repository.
+
+** Github vs. Bitbucket
+
+Github:
+- free for open source, pay for private
+- less secure
+
+Bitbucket:
+- free for private, up to 5 team members
+- more secure
+
+** Creating a remote repository
+
+- create account
+- copy your SSH keys
+- create repository
+- copy remote name of repository
+
+** Remote "origin"
+
+"origin" is the common convention for the name of the remote shared
+depot.
+
+*** Once per project:
+
+Using the remote name of the repository you just made on Github:
+
+#+begin_src sh
+  git remote add origin \
+      git@github:yourgithub/my_project.git
+#+end_src
+
+*** Every so often:
+
+#+begin_src sh
+  git push -u origin HEAD
+#+end_src
+
+* Outro
+** Learning more
+
+- http://git-scm.org -- official git documentation
+- https://help.github.com/ -- how to use github
+- http://bit.ly/bitbkthelp -- bitbucket help
+
+** Me
+
+- Tamara Temple <tamouse@gmail.com>
+- github: https://github.com/tamouse
+- devblog: http://swaac.tamouse.org
